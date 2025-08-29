@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/mprocs-0.6.4.json",
+  "procs": {
+    "server": {
+      "autostart": true,
+      "shell": "just server"
+    },
+    "tsc": {
+      "autostart": true,
+      "shell": "just watch-tsc"
+    },
+    "tailwind": {
+      "autostart": true,
+      "shell": "just watch-tailwind",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    }
+  }
+}

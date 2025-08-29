@@ -1,0 +1,4 @@
+run:
+    bun install && bun run build
+    bunx @tailwindcss/cli --minify --optimize -i ./input.css -o ./static/build/tailwind.css
+    live-server -p 9000 --index

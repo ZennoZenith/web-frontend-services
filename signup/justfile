@@ -1,0 +1,19 @@
+tailwind:
+    # --minify --optimize
+    bunx @tailwindcss/cli -i ./input.css -o ./static/build/tailwind.css
+    
+server:
+    live-server -p 9000 --index
+
+run:
+    bun install && bun run build
+    just tailwind
+    just server
+
+watch-tsc:
+    watchexec -q -c -w ./src -r --stop-signal SIGKILL "bun run build"
+
+watch-tailwind:
+    watchexec -q -c -e html,css -i ./static/build -r --stop-signal SIGKILL "just tailwind"
+
+    
